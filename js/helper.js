@@ -7,3 +7,12 @@ function rectOverlap(rect1, rect2) {
     }
     return false;
 }
+
+function resetX(deck){
+    for(var i = 0; i < decks[deck].length; i++){
+        decks[deck][i].index = i;
+    }
+    for(var card of decks[deck]){
+        card.x = (600 - decks[card.player - 1].length * 45 - 22.5) + card.index * 90;
+    }
+}
