@@ -1,14 +1,15 @@
 var register = {};
 var curplayer = 1;
 var decks = [
-  [new Card("+2","red",0,1),
-  new Card("+2","blue",1,1),
-  new Card("+2","green",2,1)],
+  [new Card("+2","green",0,1),
+  new Card("8","yellow",1,1),
+  new Card("3","blue",2,1),
+  new Card("∞","black",3,1)],
   [
-    new Card("+2","red",0,2),
+    new Card("8","red",0,2),
     new Card("+2","blue",1,2),
-    new Card("+2","green",2,2)
-  ]]
+    new Card("3","yellow",2,2)
+  ]];
 var curcard = new Card("+2","red",100,3);
 function setup(){
   createCanvas(1200, 700);

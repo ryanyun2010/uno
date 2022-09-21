@@ -20,12 +20,17 @@ class Card{
     fill(this.color);
     stroke("black");
     strokeWeight(6);
-    rect((this.top) ? this.x - 10 : this.x, (this.top) ? this.y - 15 : this.y, (this.top) ? 150 : 130, (this.top) ? 240 : 210);
+    rect((this.top) ? this.x - 10 : this.x, (this.top) ? this.y - 15 : this.y, (this.top) ? 150 : 130, (this.top) ? 240 : 210,20,20,20,20);
     fill("white");
     ellipse(this.x + 65,(this.top) ? this.y + 105 : this.y + 100, (this.top) ? 100 : 75,(this.top) ? 130 : 100);
     textSize(40);
-    fill("white");
+    if(this.type.length == 2){
     text(this.type, (this.top) ? this.x + 82 : this.x + 72, (this.top) ? this.y + 215 : this.y + 200)
+    }else if(this.type.length == 1){
+
+    text(this.type, (this.top) ? this.x + 110 : this.x + 100, (this.top) ? this.y + 215 : this.y + 200)
+    }
+    
     text(this.type, (this.top) ? this.x -2 : this.x + 8, (this.top) ? this.y + 25 : this.y + 40) 
   }
 
@@ -41,9 +46,12 @@ class Card{
   }
 }
 play(){
-  curcard = new Card(this.type,this.color,1000,3);-
+  if(checkPlay(this,curcard)){
+  curcard = new Card(this.type,this.color,1000,3);
   curcard.setup();
   decks[this.player - 1].splice(this.index,1);
   resetX(this.player - 1);
+  curplayer = (this.player == 1) ? 2 : 1;
+  }
 }
 }

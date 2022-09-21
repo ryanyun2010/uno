@@ -16,3 +16,17 @@ function resetX(deck){
         card.x = (600 - decks[card.player - 1].length * 45 - 22.5) + card.index * 90;
     }
 }
+
+function checkPlay(card,curcard){
+    // check for color
+    if(card.color == "black" || card.color == curcard.color){
+        console.log("color match")
+        return true;
+    }
+    // check for type
+    if(card.type == curcard.type){
+        console.log("type match");
+        return true;
+    }
+    return false;
+}
